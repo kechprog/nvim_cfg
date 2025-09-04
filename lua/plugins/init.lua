@@ -7,6 +7,9 @@ local plugins = {
   require("plugins.telescope"),
   require("plugins.cmp"),
   require("plugins.lsp"),
+  require("plugins.rustaceanvim"),
+  require("plugins.python"),
+  require("plugins.treesitter"),
 }
 
 -- Setup lazy.nvim with all plugins

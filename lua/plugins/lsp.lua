@@ -68,9 +68,8 @@ return {
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
       end
       
-      -- Load language-specific configurations
-      require("plugins.languages.rust").setup(lspconfig, on_attach, capabilities)
-      require("plugins.languages.python").setup(lspconfig, on_attach, capabilities)
+      -- Load language-specific configurations (excluding Rust and Python, which are handled by rustaceanvim and python.nvim)
+      -- require("plugins.languages.python").setup(lspconfig, on_attach, capabilities)
     end,
   },
 }

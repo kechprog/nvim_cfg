@@ -70,6 +70,12 @@ return {
       
       -- Find text in all files (live grep)
       vim.keymap.set("n", "<leader>fa", builtin.live_grep, { desc = "Find text in all files" })
+      
+      -- Find symbols across all files in project
+      vim.keymap.set("n", "<leader>fs", builtin.lsp_workspace_symbols, { desc = "Find symbols in project" })
+      
+      -- Find symbols in current buffer using Treesitter
+      vim.keymap.set("n", "<leader>fS", builtin.treesitter, { desc = "Find symbols in current buffer" })
     end,
   },
 }
