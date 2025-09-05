@@ -10,3 +10,12 @@ opt.tabstop = 4
 opt.shiftwidth = 4
 opt.expandtab = true
 opt.autoindent = true
+
+-- Disable wrapping
+opt.wrap = false
+
+-- Enable true color support for better syntax highlighting
+opt.termguicolors = true
+
+-- Set conceal level for plugins like markview.nvim to hide markdown syntax
+opt.conceallevel = 2

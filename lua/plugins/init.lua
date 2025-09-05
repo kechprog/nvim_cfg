@@ -10,6 +10,8 @@ local plugins = {
   require("plugins.avante"),
   require("plugins.snacks"),
   require("plugins.treesitter"),
+  require("plugins.markview"),
+  
 }
 
 -- Setup lazy.nvim with all plugins

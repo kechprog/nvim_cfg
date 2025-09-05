@@ -86,6 +86,7 @@ The configuration uses `lazy.nvim` for plugin management. Plugins are organized 
 9. **Autocompletion**: nvim-cmp for code completion
 10. **Python Virtual Environments**: venv-selector.nvim for selecting and managing Python virtual environments
 11. **AI Assistance**: avante.nvim for AI-powered coding assistance with multiple providers
+12. **Markdown Preview**: markview.nvim for preview
 
 ## Development Conventions
 
@@ -105,6 +106,7 @@ The configuration uses `lazy.nvim` for plugin management. Plugins are organized 
 - `:Lazy` - Open plugin manager
 - `:TSUpdate` - Update treesitter parsers
 - `:Snacks picker` - Open file picker
+- `:Markview` - Control Markdown preview
 - `:Neotree` - Open file explorer
 - `:VenvSelect` - Select Python virtual environment (when in a Python file)
 - `:AvanteChat` - Open AI chat interface
