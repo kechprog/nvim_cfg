@@ -39,7 +39,7 @@ Each plugin defines its own keymaps within its configuration file:
 - `<leader>fs` - Find symbols across all files in project
 - `<leader>fS` - Find symbols in current buffer
 
-#### Neo-tree (`lua/plugins/neo-tree.lua`)
+#### snacks.nvim Explorer (replaces Neo-tree)
 - `<leader>e` - Toggle file explorer
 - `<leader>E` - Focus file explorer
 
@@ -76,7 +76,7 @@ Note: All language-specific keymaps are buffer-specific and only available when 
 The configuration uses `lazy.nvim` for plugin management. Plugins are organized as follows:
 
 1. **Colorscheme**: Catppuccin (macchiato flavor)
-2. **File Explorer**: Neo-tree
+2. **File Explorer**: snacks.nvim explorer (replaces Neo-tree)
 3. **Navigation**: Leap for vim-like motion
 4. **Fuzzy Finder**: snacks.nvim picker (replaces Telescope)
 5. **Terminal**: snacks.nvim terminal (replaces Toggleterm)

@@ -1,7 +1,6 @@
 -- Plugin manager setup
 local plugins = {
   require("plugins.colorscheme"),
-  require("plugins.neo-tree"),
   require("plugins.leap"),
   require("plugins.cmp"),
   require("plugins.lsp"),

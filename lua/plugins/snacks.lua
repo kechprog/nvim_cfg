@@ -14,6 +14,9 @@ return {
       picker = {
         enabled = true,
       },
+      explorer = {
+        enabled = true,
+      },
     },
     keys = {
       -- Replace toggleterm's <C-t> with snacks.nvim terminal
@@ -26,6 +29,9 @@ return {
       { "<leader>fa", function() Snacks.picker.grep() end, desc = "Find text in all files" },
       { "<leader>fs", function() Snacks.picker.lsp_workspace_symbols() end, desc = "Find symbols in project" },
       { "<leader>fS", function() Snacks.picker.lsp_document_symbols() end, desc = "Find symbols in current buffer" },
+      -- Replace Neo-tree keymaps with snacks.nvim explorer
+      { "<leader>e", function() Snacks.explorer() end, desc = "Toggle tree viewer" },
+      { "<leader>E", function() Snacks.explorer(vim.fn.expand("%")) end, desc = "Focus tree viewer" },
     },
   },
 }
