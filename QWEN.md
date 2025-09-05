@@ -81,6 +81,7 @@ The configuration uses `lazy.nvim` for plugin management. Plugins are organized 
 7. **LSP Support**: Full LSP configuration with support for Python and Rust
 8. **Autocompletion**: nvim-cmp for code completion
 9. **Python Virtual Environments**: venv-selector.nvim for selecting and managing Python virtual environments
+10. **AI Assistance**: avante.nvim for AI-powered coding assistance with multiple providers
 
 ## Development Conventions
 
@@ -103,6 +104,9 @@ The configuration uses `lazy.nvim` for plugin management. Plugins are organized 
 - `:Neotree` - Open file explorer
 - `:ToggleTerm` - Open terminal
 - `:VenvSelect` - Select Python virtual environment (when in a Python file)
+- `:AvanteChat` - Open AI chat interface
+- `:AvanteAsk` - Ask AI about your code
+- `:AvanteBuild` - Build avante.nvim dependencies
 
 ## Key Design Principles
 
@@ -110,3 +114,13 @@ The configuration uses `lazy.nvim` for plugin management. Plugins are organized 
 2. **Local Keymaps**: Plugin-specific keymaps are defined within the plugin configuration
 3. **Central Core Configuration**: Basic options and core Neovim keymaps are separate from plugins
 4. **Language-Specific LSP Setup**: Each language has its own configuration file in the languages directory (except Python and Rust which have dedicated modules)
+
+## AI Assistance
+
+The configuration includes avante.nvim for AI-powered coding assistance with support for multiple providers:
+
+- **GitHub Copilot** - Default provider for code suggestions
+- **Qwen** - Alibaba's Qwen language model
+- **Gemini CLI** - Google's Gemini language model
+
+The plugin automatically builds its dependencies when installed or updated. If you encounter issues with the AI features, you can manually trigger a rebuild with `:AvanteBuild`.
