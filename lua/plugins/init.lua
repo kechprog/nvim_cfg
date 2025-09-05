@@ -9,6 +9,8 @@ local plugins = {
   require("plugins.lsp"),
   require("plugins.rustaceanvim"),
   require("python"),
+  require("plugins.copilot"),
+  require("plugins.avante"),
   require("plugins.treesitter"),
 }
 
