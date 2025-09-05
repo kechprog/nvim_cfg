@@ -62,6 +62,10 @@ Language-specific keymaps are available under `<leader>m` when editing Rust file
 - `<leader>mx` - Explain error
 - `K` - Hover actions (enhanced for Rust)
 
+#### Python (`lua/python/venv-selector.lua`)
+Language-specific keymaps are available under `<leader>m` when editing Python files:
+- `<leader>mp` - Select Python virtual environment
+
 Note: All language-specific keymaps are buffer-specific and only available when the relevant language file is focused. The `<leader>m` prefix is reserved for language-specific functionality.
 
 ## Plugin Management
@@ -76,6 +80,7 @@ The configuration uses `lazy.nvim` for plugin management. Plugins are organized 
 6. **Syntax Highlighting**: Treesitter for enhanced syntax highlighting
 7. **LSP Support**: Full LSP configuration with support for Python and Rust
 8. **Autocompletion**: nvim-cmp for code completion
+9. **Python Virtual Environments**: venv-selector.nvim for selecting and managing Python virtual environments
 
 ## Development Conventions
 
@@ -85,9 +90,10 @@ The configuration uses `lazy.nvim` for plugin management. Plugins are organized 
 3. Run `:Lazy sync` to install the plugin
 
 ### Adding Language Support
-1. Add a new file in `lua/plugins/languages/` for the language
+1. For languages other than Python and Rust, add a new file in `lua/plugins/languages/` for the language
 2. Configure the LSP in that file
 3. Update `lua/plugins/lsp.lua` to load the new language configuration
+4. For Python support, modify files in the `lua/python/` directory
 
 ## Useful Commands
 
@@ -96,10 +102,11 @@ The configuration uses `lazy.nvim` for plugin management. Plugins are organized 
 - `:Telescope find_files` - Find files
 - `:Neotree` - Open file explorer
 - `:ToggleTerm` - Open terminal
+- `:VenvSelect` - Select Python virtual environment (when in a Python file)
 
 ## Key Design Principles
 
 1. **Modular Organization**: Each plugin is self-contained in its own file
 2. **Local Keymaps**: Plugin-specific keymaps are defined within the plugin configuration
 3. **Central Core Configuration**: Basic options and core Neovim keymaps are separate from plugins
-4. **Language-Specific LSP Setup**: Each language has its own configuration file in the languages directory
+4. **Language-Specific LSP Setup**: Each language has its own configuration file in the languages directory (except Python and Rust which have dedicated modules)
