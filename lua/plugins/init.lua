@@ -1,16 +1,15 @@
 -- Plugin manager setup
 local plugins = {
   require("plugins.colorscheme"),
-  require("plugins.toggleterm"),
   require("plugins.neo-tree"),
   require("plugins.leap"),
-  require("plugins.telescope"),
   require("plugins.cmp"),
   require("plugins.lsp"),
   require("plugins.rustaceanvim"),
   require("python"),
   require("plugins.copilot"),
   require("plugins.avante"),
+  require("plugins.snacks"),
   require("plugins.treesitter"),
 }
 

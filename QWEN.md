@@ -32,12 +32,12 @@ Keymaps for core Neovim functionality:
 ### Plugin-Based Keymaps
 Each plugin defines its own keymaps within its configuration file:
 
-#### Telescope (`lua/plugins/telescope.lua`)
+#### snacks.nvim Picker (replaces Telescope)
 - `<leader>ff` - Find files
-- `<leader>fa` - Live grep (search in all files)
-- `<leader>ft` - Search in current buffer
-- `<leader>fs` - Find symbols across all files in project (using LSP)
-- `<leader>fS` - Find symbols in current buffer (using Treesitter)
+- `<leader>fa` - Find text in all files
+- `<leader>ft` - Find text in current buffer
+- `<leader>fs` - Find symbols across all files in project
+- `<leader>fS` - Find symbols in current buffer
 
 #### Neo-tree (`lua/plugins/neo-tree.lua`)
 - `<leader>e` - Toggle file explorer
@@ -66,6 +66,9 @@ Language-specific keymaps are available under `<leader>m` when editing Rust file
 Language-specific keymaps are available under `<leader>m` when editing Python files:
 - `<leader>mp` - Select Python virtual environment
 
+#### snacks.nvim LazyGit
+- `<leader>gl` - Open LazyGit interface
+
 Note: All language-specific keymaps are buffer-specific and only available when the relevant language file is focused. The `<leader>m` prefix is reserved for language-specific functionality.
 
 ## Plugin Management
@@ -74,14 +77,15 @@ The configuration uses `lazy.nvim` for plugin management. Plugins are organized 
 
 1. **Colorscheme**: Catppuccin (macchiato flavor)
 2. **File Explorer**: Neo-tree
-3. **Fuzzy Finder**: Telescope with fzf-native extension
-4. **Terminal**: Toggleterm
-5. **Navigation**: Leap for vim-like motion
-6. **Syntax Highlighting**: Treesitter for enhanced syntax highlighting
-7. **LSP Support**: Full LSP configuration with support for Python and Rust
-8. **Autocompletion**: nvim-cmp for code completion
-9. **Python Virtual Environments**: venv-selector.nvim for selecting and managing Python virtual environments
-10. **AI Assistance**: avante.nvim for AI-powered coding assistance with multiple providers
+3. **Navigation**: Leap for vim-like motion
+4. **Fuzzy Finder**: snacks.nvim picker (replaces Telescope)
+5. **Terminal**: snacks.nvim terminal (replaces Toggleterm)
+6. **Git Integration**: snacks.nvim lazygit
+7. **Syntax Highlighting**: Treesitter for enhanced syntax highlighting
+8. **LSP Support**: Full LSP configuration with support for Python and Rust
+9. **Autocompletion**: nvim-cmp for code completion
+10. **Python Virtual Environments**: venv-selector.nvim for selecting and managing Python virtual environments
+11. **AI Assistance**: avante.nvim for AI-powered coding assistance with multiple providers
 
 ## Development Conventions
 
@@ -100,9 +104,8 @@ The configuration uses `lazy.nvim` for plugin management. Plugins are organized 
 
 - `:Lazy` - Open plugin manager
 - `:TSUpdate` - Update treesitter parsers
-- `:Telescope find_files` - Find files
+- `:Snacks picker` - Open file picker
 - `:Neotree` - Open file explorer
-- `:ToggleTerm` - Open terminal
 - `:VenvSelect` - Select Python virtual environment (when in a Python file)
 - `:AvanteChat` - Open AI chat interface
 - `:AvanteAsk` - Ask AI about your code
