@@ -10,6 +10,16 @@ return {
       -- Default provider
       provider = "copilot",
       auto_suggestions_provider = "copilot",
+      providers = {
+        copilot = {
+          model = "gpt-4.1",
+        },
+      },
+      
+      -- Disable auto keymaps to use our own
+      behaviour = {
+        auto_set_keymaps = false,
+      },
       
       -- ACP providers configuration
       acp_providers = {
@@ -20,7 +30,7 @@ return {
             NODE_NO_WARNINGS = "1",
           },
         },
-        ["gemini-cli"] = {
+        ["gemini"] = {
           command = "gemini",
           args = { "--experimental-acp" },
           env = {
@@ -32,11 +42,11 @@ return {
       -- Other options
       hints = { enabled = true },
       windows = {
-        width = 30,
+        width = 50, -- Increased from 30 to 50
         sidebar_open = true,
         preview = {
           layout = "vertical",
-          width = 30,
+          width = 50, -- Increased from 30 to 50
         },
       },
     },
@@ -63,6 +73,36 @@ return {
           },
         },
       }
+    },
+    keys = {
+      { "<leader>aa", ":AvanteChat<cr>", desc = "Toggle Avante Chat", silent = true },
+      { "<leader>ah", ":AvanteHistory<cr>", desc = "Show Avante History", silent = true },
+      { "<leader>an", ":AvanteChatNew<cr>", desc = "New Avante Chat", silent = true },
+      {
+        "<leader>ap",
+        function()
+          local providers = { "qwen", "copilot", "gemini" }
+          vim.ui.select(providers, {
+            prompt = "Select AI Provider:",
+            format_item = function(item)
+              return "Provider: " .. item
+            end,
+          }, function(choice)
+            if choice then
+              -- Update the provider
+              vim.g.avante_provider = choice
+              -- Update the avante configuration properly
+              local avante = require("avante")
+              if avante then
+                avante.setup({ provider = choice })
+              end
+              print("Avante provider set to: " .. choice)
+            end
+          end)
+        end,
+        desc = "Select AI Provider",
+        silent = true
+      },
     },
   },
 }

@@ -23,6 +23,7 @@ return {
       { "<C-t>", function() Snacks.terminal() end, desc = "Toggle Terminal" },
       -- Add lazygit integration
       { "<leader>gl", function() Snacks.lazygit() end, desc = "LazyGit" },
+      { "<leader>gs", function() Snacks.picker.git_status() end, desc = "List changed git files" },
       -- Replace telescope keymaps with snacks.nvim picker
       { "<leader>ff", function() Snacks.picker.files() end, desc = "Find files" },
       { "<leader>ft", function() Snacks.picker.lines() end, desc = "Find text in buffer" },
