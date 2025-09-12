@@ -7,11 +7,10 @@ local plugins = {
   require("plugins.rustaceanvim"),
   require("python"),
   require("plugins.copilot"),
-  require("plugins.avante"),
+  require("plugins.codecompanion"),
   require("plugins.snacks"),
   require("plugins.treesitter"),
   require("plugins.markview"),
-  
 }
 
 -- Setup lazy.nvim with all plugins
