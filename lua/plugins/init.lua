@@ -1,12 +1,14 @@
 -- Plugin manager setup
+local lsp_module = require("plugins.lsp")
+
 local plugins = {
   require("plugins.colorscheme"),
   require("plugins.cmp"),
-  require("plugins.lsp"),
+  require("plugins.lazydev"),  -- Add lazydev plugin
+  lsp_module.plugin_spec,
   require("plugins.rustaceanvim"),
   require("python"),
   require("plugins.copilot"),
-  require("plugins.codecompanion"),
   require("plugins.snacks"),
   require("plugins.treesitter"),
   require("plugins.markview"),
